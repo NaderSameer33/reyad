@@ -136,14 +136,40 @@ export default function ContactSection() {
                 </div>
               </a>
 
-              <div className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/70">
-                <div className="w-10 h-10 rounded-lg bg-slate-800 text-teal-300 border border-slate-700 flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[11px] text-slate-400 block">منطقة الخدمة</span>
-                  <span className="text-xs font-bold text-slate-200 font-cairo block">جميع أحياء ومحافظات مدينة الرياض</span>
-                </div>
+              <div className="grid grid-cols-2 gap-2.5 pt-1">
+                <a
+                  href="https://x.com/detectleaks"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/60 border border-slate-700/70 hover:border-slate-500/60 hover:bg-slate-800 transition-colors group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-center shrink-0">
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </div>
+                  <div className="overflow-hidden">
+                    <span className="text-[10px] text-slate-400 block font-cairo">منصة X (تويتر)</span>
+                    <span className="text-xs font-bold text-slate-200 block truncate font-cairo">@detectleaks</span>
+                  </div>
+                </a>
+
+                <a
+                  href="https://www.snapchat.com/@embratwr2?share_id=9J31apJKld0&locle=ar-SA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-800/60 border border-slate-700/70 hover:border-amber-500/40 hover:bg-slate-800 transition-colors group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-slate-800 text-amber-300 border border-slate-700 flex items-center justify-center shrink-0">
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M12.04 2c-3.37 0-5.74 2.45-5.83 5.48-.03.95.27 1.87.5 2.76.12.45.2.9.06 1.34-.14.44-.54.76-.98.88-1.04.28-1.57.87-1.53 1.7.04.7.53 1.25 1.26 1.41.6.13.9.4.95.96.06.63-.3 1.13-.8 1.48-.7.49-1.46.91-2.02 1.58-.52.62-.64 1.33-.31 2.01.32.66 1.05.9 1.77.72.63-.16 1.27-.3 1.9-.45 1.08-.25 2.14.07 3.06.66 1.28.82 2.71 1.25 4.25 1.24 1.54-.01 2.97-.44 4.25-1.26.92-.59 1.98-.91 3.06-.66.63.15 1.27.29 1.9.45.72.18 1.45-.06 1.77-.72.33-.68.21-1.39-.31-2.01-.56-.67-1.32-1.09-2.02-1.58-.5-.35-.86-.85-.8-1.48.05-.56.35-.83.95-.96.73-.16 1.22-.71 1.26-1.41.04-.83-.49-1.42-1.53-1.7-.44-.12-.84-.44-.98-.88-.14-.44-.06-.89.06-1.34.23-.89.53-1.81.5-2.76C20.31 4.45 17.94 2 14.57 2h-2.53z" />
+                    </svg>
+                  </div>
+                  <div className="overflow-hidden">
+                    <span className="text-[10px] text-slate-400 block font-cairo">سناب شات</span>
+                    <span className="text-xs font-bold text-slate-200 block truncate font-cairo">embratwr2</span>
+                  </div>
+                </a>
               </div>
             </div>
 
