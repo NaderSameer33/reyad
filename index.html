@@ -1,0 +1,787 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="النبلاء لحلول العزل الشامل – متخصصون في عزل الأسطح بأحدث التقنيات في الرياض، المملكة العربية السعودية." />
+  <meta name="keywords" content="عزل أسطح, عزل حراري, عزل مائي, الرياض, المملكة العربية السعودية, النبلاء" />
+  <meta name="author" content="النبلاء لحلول العزل" />
+  <title>النبلاء | حلول العزل الاحترافية</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP + Plugins CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            tajawal: ['Tajawal', 'sans-serif'],
+            cairo:   ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy:      '#0B1C3E',
+              navyDark:  '#060F22',
+              navyMid:   '#112454',
+              slate:     '#1E3A5F',
+              amber:     '#F59E0B',
+              amberLight:'#FCD34D',
+              amberDeep: '#D97706',
+              teal:      '#0D9488',
+              tealLight: '#2DD4BF',
+              tealDark:  '#0F766E',
+              muted:     '#94A3B8',
+              light:     '#E2E8F0',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-brand-navyDark font-tajawal text-brand-light overflow-x-hidden antialiased">
+
+  <!-- ═══════════════════════════════════════════════
+       CUSTOM CURSOR
+  ═══════════════════════════════════════════════ -->
+  <div id="cursor-dot"   aria-hidden="true"></div>
+  <div id="cursor-ring"  aria-hidden="true"></div>
+  <div id="cursor-label" aria-hidden="true">اكتشف</div>
+
+  <!-- ═══════════════════════════════════════════════
+       PARALLAX BACKGROUND
+  ═══════════════════════════════════════════════ -->
+  <div id="parallax-bg" aria-hidden="true">
+
+    <!-- Subtle grid -->
+    <svg id="grid-svg" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#64748B" stroke-width="0.8"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+
+    <!-- Glowing Orbs -->
+    <div class="parallax-orb" id="orb1"></div>
+    <div class="parallax-orb" id="orb2"></div>
+    <div class="parallax-orb" id="orb3"></div>
+    <div class="parallax-orb" id="orb4"></div>
+    <div class="parallax-orb" id="orb5"></div>
+
+    <!-- Geometric SVG Shapes -->
+    <svg id="geo-svg" xmlns="http://www.w3.org/2000/svg">
+      <!-- Hexagon -->
+      <polygon class="parallax-shape" id="shape-hex"
+               points="1380,60 1430,95 1430,165 1380,200 1330,165 1330,95"
+               fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+      <!-- Triangle -->
+      <polygon class="parallax-shape" id="shape-tri"
+               points="80,620 150,500 220,620"
+               fill="none" stroke="#0D9488" stroke-width="1.2"/>
+      <!-- Diamond -->
+      <rect class="parallax-shape" id="shape-diamond"
+            x="700" y="300" width="80" height="80"
+            fill="none" stroke="#94A3B8" stroke-width="1"
+            transform="rotate(45,740,340)"/>
+      <!-- Dashed circle -->
+      <circle class="parallax-shape" id="shape-circle"
+              cx="200" cy="200" r="55"
+              fill="none" stroke="#F59E0B" stroke-width="1"
+              stroke-dasharray="8,6"/>
+      <!-- Diagonal line -->
+      <line class="parallax-shape" id="shape-line"
+            x1="900" y1="50" x2="1100" y2="700"
+            stroke="#0D9488" stroke-width="0.8"
+            stroke-dasharray="12,8"/>
+    </svg>
+
+  </div><!-- /parallax-bg -->
+
+  <!-- ═══════════════════════════════════════════════
+       MAIN CONTENT  (Tasks 2+ inject inside here)
+  ═══════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR  (Glassmorphism Sticky)
+  ═══════════════════════════════════════════════ -->
+  <header id="navbar" aria-label="شريط التنقل الرئيسي">
+    <div class="nav-container">
+
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo magnetic-el" id="nav-logo-link" aria-label="النبلاء – الصفحة الرئيسية">
+        <span class="logo-icon" aria-hidden="true">
+          <!-- Roof shield SVG icon -->
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 3L2 13v16h10v-9h8v9h10V13L16 3Z" fill="url(#logoGrad)" opacity="0.15"/>
+            <path d="M16 3L2 13v16h10v-9h8v9h10V13L16 3Z" stroke="url(#logoGrad)" stroke-width="1.5" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="2" y1="3" x2="30" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#2DD4BF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">النبلاء</span>
+        <span class="logo-sub">للعزل</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" aria-label="روابط التنقل">
+        <a href="#hero"     class="nav-link magnetic-el" data-cursor-hover>الرئيسية</a>
+        <a href="#services" class="nav-link magnetic-el" data-cursor-hover>خدماتنا</a>
+        <a href="#about"    class="nav-link magnetic-el" data-cursor-hover>عن الشركة</a>
+        <a href="#projects" class="nav-link magnetic-el" data-cursor-hover>أعمالنا</a>
+        <a href="#contact"  class="nav-link magnetic-el" data-cursor-hover>اتصل بنا</a>
+      </nav>
+
+      <!-- CTA + Hamburger -->
+      <div class="nav-actions">
+        <a href="tel:+966500000000" class="nav-cta magnetic-el" aria-label="اتصل بنا">
+          <span>احصل على عرض</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button id="hamburger" class="hamburger magnetic-el" aria-label="قائمة التنقل" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <nav class="mobile-nav" aria-label="قائمة الجوال">
+        <a href="#hero"     class="mobile-link">الرئيسية</a>
+        <a href="#services" class="mobile-link">خدماتنا</a>
+        <a href="#about"    class="mobile-link">عن الشركة</a>
+        <a href="#projects" class="mobile-link">أعمالنا</a>
+        <a href="#contact"  class="mobile-link">اتصل بنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="relative z-10">
+
+    <!-- ═══════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-headline">
+
+      <!-- Decorative corner lines -->
+      <span class="hero-corner hero-corner--tl" aria-hidden="true"></span>
+      <span class="hero-corner hero-corner--br" aria-hidden="true"></span>
+
+      <div class="hero-inner">
+
+        <!-- Badge pill -->
+        <div class="hero-badge" id="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          شركة معتمدة في الرياض منذ 2008
+        </div>
+
+        <!-- Main headline – split into lines for GSAP reveal -->
+        <h1 id="hero-headline" class="hero-headline">
+          <span class="headline-line" id="hl-line1">
+            <span class="headline-word">شركة عزل</span>
+            <span class="headline-word headline-accent">شامل</span>
+          </span>
+          <span class="headline-line" id="hl-line2">
+            <span class="headline-word">مائي</span>
+            <span class="headline-sep" aria-hidden="true">·</span>
+            <span class="headline-word">حراري</span>
+            <span class="headline-sep" aria-hidden="true">·</span>
+            <span class="headline-word headline-teal">وفوم</span>
+          </span>
+          <span class="headline-line headline-line--sub" id="hl-line3">
+            <span class="headline-word">بالرياض</span>
+          </span>
+        </h1>
+
+        <!-- Sub-description -->
+        <p class="hero-desc" id="hero-desc">
+          نحمي مبانيكم من الحرارة القاسية والرطوبة بأفضل مواد العزل العالمية.
+          خبرة تتجاوز <strong>15 عاماً</strong> وأكثر من <strong>3,000 مشروع</strong> منجز.
+        </p>
+
+        <!-- CTA Row -->
+        <div class="hero-cta-row" id="hero-ctas">
+          <a href="#services" class="cta-primary magnetic-el" id="cta-main" aria-label="اكتشف خدماتنا">
+            <span>اكتشف خدماتنا</span>
+            <span class="cta-arrow" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <a href="tel:+966500000000" class="cta-secondary magnetic-el" aria-label="اتصل بنا الآن">
+            <span class="cta-phone-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.03h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            اتصل الآن
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="3000">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">مشروع منجز</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-plus">+</span>
+            <span class="stat-label">سنة خبرة</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="98">0</span>
+            <span class="stat-plus">%</span>
+            <span class="stat-label">رضا العملاء</span>
+          </div>
+        </div>
+
+      </div><!-- /hero-inner -->
+
+      <!-- Hero bottom scroll indicator -->
+      <div class="scroll-indicator" id="scroll-indicator" aria-label="انتقل للأسفل">
+        <span class="scroll-text">مرر للأسفل</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </div>
+
+    </section>
+    <!-- /HERO -->
+
+    <!-- ═══════════════════════════════════════════════
+         SERVICES SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="services" class="services-section" aria-labelledby="services-title">
+
+      <!-- Section Header -->
+      <div class="section-header">
+        <p class="section-tag" id="services-tag">ما نقدمه لك</p>
+        <h2 class="section-title" id="services-title">
+          خدمات العزل
+          <span class="title-highlight">الشامل</span>
+        </h2>
+        <p class="section-subtitle">
+          حلول متكاملة ومتخصصة لكل أنواع العزل بأعلى معايير الجودة والضمان
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="services-grid" id="services-grid" role="list">
+
+        <!-- Card 1 – العزل المائي -->
+        <article class="service-card tilt-card" id="svc-1" role="listitem"
+                 data-service="water" aria-labelledby="svc-title-1">
+          <div class="card-glow card-glow--water" aria-hidden="true"></div>
+          <div class="card-inner">
+            <div class="card-icon-wrap card-icon--water" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C6 9 4 13 4 16a8 8 0 0016 0c0-3-2-7-8-14Z"/>
+                <path d="M7.5 16.5a4.5 4.5 0 007 0" opacity="0.5"/>
+              </svg>
+            </div>
+            <h3 class="card-title" id="svc-title-1">العزل المائي</h3>
+            <p class="card-desc">
+              نظام عزل مائي متكامل للأسطح والجدران والخزانات باستخدام أحدث المواد المتوافقة مع المناخ السعودي.
+            </p>
+            <ul class="card-features" aria-label="مميزات العزل المائي">
+              <li>مقاوم للأشعة فوق البنفسجية</li>
+              <li>ضمان حتى 15 سنة</li>
+              <li>تطبيق بدون أضرار للمبنى</li>
+            </ul>
+            <div class="card-footer">
+              <a href="#contact" class="card-cta magnetic-el" aria-label="طلب العزل المائي">
+                طلب الخدمة
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 – العزل الحراري -->
+        <article class="service-card tilt-card" id="svc-2" role="listitem"
+                 data-service="thermal" aria-labelledby="svc-title-2">
+          <div class="card-glow card-glow--thermal" aria-hidden="true"></div>
+          <div class="card-inner">
+            <div class="card-icon-wrap card-icon--thermal" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 9V3M12 3L9 6M12 3l3 3"/>
+                <path d="M9 15V9h6v6"/>
+                <circle cx="12" cy="18" r="3"/>
+                <path d="M6 18H3M21 18h-3"/>
+              </svg>
+            </div>
+            <h3 class="card-title" id="svc-title-2">العزل الحراري</h3>
+            <p class="card-desc">
+              حلول عزل حراري احترافية تقلل استهلاك الطاقة بنسبة تصل إلى 40% وتوفر بيئة داخلية مثالية طوال العام.
+            </p>
+            <ul class="card-features" aria-label="مميزات العزل الحراري">
+              <li>توفير 40% من فاتورة التكييف</li>
+              <li>ألواح وبطانات عزل متخصصة</li>
+              <li>عمر افتراضي +20 سنة</li>
+            </ul>
+            <div class="card-footer">
+              <a href="#contact" class="card-cta magnetic-el" aria-label="طلب العزل الحراري">
+                طلب الخدمة
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 – عزل الفوم (Featured) -->
+        <article class="service-card tilt-card service-card--featured" id="svc-3" role="listitem"
+                 data-service="foam" aria-labelledby="svc-title-3">
+          <div class="card-glow card-glow--foam" aria-hidden="true"></div>
+          <div class="card-badge-featured" aria-label="الأكثر طلباً">الأكثر طلباً</div>
+          <div class="card-inner">
+            <div class="card-icon-wrap card-icon--foam" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9"/>
+                <path d="M3 12c0 4.97 4.03 9 9 9"/>
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 3v3M12 18v3M3 12H6M18 12h3"/>
+              </svg>
+            </div>
+            <h3 class="card-title" id="svc-title-3">عزل الفوم</h3>
+            <p class="card-desc">
+              تقنية رش الفوم البولي يوريثان التي توفر عزلاً متكاملاً للحرارة والرطوبة في تطبيق واحد سريع وفعّال.
+            </p>
+            <ul class="card-features" aria-label="مميزات عزل الفوم">
+              <li>تطبيق سريع ومتجانس بالكامل</li>
+              <li>عزل حراري ومائي مزدوج</li>
+              <li>يصل إلى الزوايا والفراغات الدقيقة</li>
+            </ul>
+            <div class="card-footer">
+              <a href="#contact" class="card-cta card-cta--featured magnetic-el" aria-label="طلب عزل الفوم">
+                طلب الخدمة
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 – العزل الصوتي -->
+        <article class="service-card tilt-card" id="svc-4" role="listitem"
+                 data-service="acoustic" aria-labelledby="svc-title-4">
+          <div class="card-glow card-glow--acoustic" aria-hidden="true"></div>
+          <div class="card-inner">
+            <div class="card-icon-wrap card-icon--acoustic" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 010 14.14" opacity="0.5"/>
+                <path d="M15.54 8.46a5 5 0 010 7.07"/>
+              </svg>
+            </div>
+            <h3 class="card-title" id="svc-title-4">العزل الصوتي</h3>
+            <p class="card-desc">
+              حلول عزل صوتي عالي الأداء للمنازل والمكاتب والاستوديوهات لضمان بيئة هادئة ومريحة تماماً.
+            </p>
+            <ul class="card-features" aria-label="مميزات العزل الصوتي">
+              <li>تخفيض الضوضاء بنسبة 85%</li>
+              <li>ألواح صوتية احترافية</li>
+              <li>مناسب للجدران والأسقف</li>
+            </ul>
+            <div class="card-footer">
+              <a href="#contact" class="card-cta magnetic-el" aria-label="طلب العزل الصوتي">
+                طلب الخدمة
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 – عزل الخزانات -->
+        <article class="service-card tilt-card" id="svc-5" role="listitem"
+                 data-service="tank" aria-labelledby="svc-title-5">
+          <div class="card-glow card-glow--tank" aria-hidden="true"></div>
+          <div class="card-inner">
+            <div class="card-icon-wrap card-icon--tank" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                <path d="M3 9h18M3 15h18" opacity="0.5"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h3 class="card-title" id="svc-title-5">عزل الخزانات</h3>
+            <p class="card-desc">
+              عزل متخصص لخزانات المياه بمواد معتمدة صحياً لحماية المياه من التلوث والحرارة والتسريب.
+            </p>
+            <ul class="card-features" aria-label="مميزات عزل الخزانات">
+              <li>مواد معتمدة وصحية 100%</li>
+              <li>لجميع أحجام الخزانات</li>
+              <li>يطيل عمر الخزان 3 أضعاف</li>
+            </ul>
+            <div class="card-footer">
+              <a href="#contact" class="card-cta magnetic-el" aria-label="طلب عزل الخزانات">
+                طلب الخدمة
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /services-grid -->
+
+      <!-- Decorative bottom -->
+      <div class="services-cta-bar" id="services-cta-bar">
+        <p class="services-cta-text">هل تحتاج استشارة مجانية؟</p>
+        <a href="tel:+966500000000" class="cta-primary magnetic-el" aria-label="اتصل بنا للاستشارة المجانية">
+          <span>اتصل بنا الآن</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.03h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+      </div>
+
+    </section>
+    <!-- /SERVICES -->
+
+    <!-- ═══════════════════════════════════════════════
+         SEO ARTICLES SECTION
+    ═══════════════════════════════════════════════ -->
+    <section id="articles" class="articles-section" aria-labelledby="articles-section-title">
+
+      <!-- Section Header -->
+      <div class="section-header io-reveal">
+        <p class="section-tag">مقالات ونصائح</p>
+        <h2 class="section-title" id="articles-section-title">
+          مركز المعرفة
+          <span class="title-highlight">والخبرة</span>
+        </h2>
+        <p class="section-subtitle">
+          محتوى متخصص من خبراء العزل لمساعدتك في اتخاذ القرار الصحيح
+        </p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid" id="articles-grid">
+
+        <!-- ── Article 1: أفضل عزل فوم بالرياض ── -->
+        <article class="article-card io-reveal io-delay-0"
+                 id="article-foam"
+                 itemscope itemtype="https://schema.org/Article"
+                 aria-labelledby="art-title-1">
+
+          <a href="#contact" class="article-img-wrap" aria-label="اقرأ المزيد عن عزل الفوم">
+            <img src="img_foam.jpg"
+                 alt="تطبيق عزل الفوم البولي يوريثان على سطح مبنى في الرياض"
+                 class="article-img"
+                 loading="lazy"
+                 width="800" height="450"
+                 itemprop="image" />
+            <span class="article-img-overlay" aria-hidden="true">
+              <span class="article-img-btn">اقرأ المقال</span>
+            </span>
+            <span class="article-category-badge">عزل الفوم</span>
+          </a>
+
+          <div class="article-body" itemprop="articleBody">
+            <header class="article-header">
+              <div class="article-meta">
+                <time datetime="2024-11-15" class="article-date" itemprop="datePublished">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  نوفمبر 2024
+                </time>
+                <span class="article-read-time">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  5 دقائق قراءة
+                </span>
+              </div>
+              <h3 class="article-title" id="art-title-1" itemprop="headline">
+                أفضل عزل فوم بالرياض: دليلك الشامل لعام 2025
+              </h3>
+            </header>
+
+            <section class="article-content" aria-label="محتوى المقال">
+              <p class="article-excerpt">
+                يُعدّ <strong>عزل الفوم البولي يوريثان</strong> من أكثر تقنيات العزل طلباً في
+                الرياض، وذلك لقدرته الفريدة على توفير عزل مائي وحراري متكامل في عملية تطبيق
+                واحدة سريعة وفعّالة.
+              </p>
+              <p class="article-excerpt article-excerpt--secondary">
+                تتميز هذه التقنية بقدرتها على الوصول إلى أصغر الفراغات والزوايا، مما يجعلها
+                الخيار الأمثل للأسطح ذات الأشكال غير المنتظمة. كما تمتاز بعمر افتراضي يتجاوز
+                20 سنة مع أدنى متطلبات صيانة ممكنة.
+              </p>
+
+              <ul class="article-highlights" aria-label="أبرز فوائد عزل الفوم">
+                <li>
+                  <span class="highlight-icon highlight-icon--amber" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  يوفر ما يصل إلى <strong>45%</strong> من تكاليف الطاقة سنوياً
+                </li>
+                <li>
+                  <span class="highlight-icon highlight-icon--amber" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  مقاوم للأشعة فوق البنفسجية ودرجات الحرارة القصوى
+                </li>
+                <li>
+                  <span class="highlight-icon highlight-icon--amber" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  ضمان شامل يصل إلى <strong>15 سنة</strong> على مواد العمل
+                </li>
+              </ul>
+            </section>
+
+            <footer class="article-footer">
+              <a href="#contact" class="article-read-more magnetic-el" aria-label="اقرأ المزيد عن عزل الفوم بالرياض">
+                اقرأ المقال كاملاً
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- ── Article 2: حماية الأسطح من التسربات ── -->
+        <article class="article-card io-reveal io-delay-1"
+                 id="article-waterproof"
+                 itemscope itemtype="https://schema.org/Article"
+                 aria-labelledby="art-title-2">
+
+          <a href="#contact" class="article-img-wrap" aria-label="اقرأ المزيد عن حماية الأسطح">
+            <img src="img_waterproof.jpg"
+                 alt="عامل يطبق طبقة العزل المائي على سطح مبنى في الرياض"
+                 class="article-img"
+                 loading="lazy"
+                 width="800" height="450"
+                 itemprop="image" />
+            <span class="article-img-overlay" aria-hidden="true">
+              <span class="article-img-btn">اقرأ المقال</span>
+            </span>
+            <span class="article-category-badge article-category-badge--teal">العزل المائي</span>
+          </a>
+
+          <div class="article-body" itemprop="articleBody">
+            <header class="article-header">
+              <div class="article-meta">
+                <time datetime="2024-10-20" class="article-date" itemprop="datePublished">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  أكتوبر 2024
+                </time>
+                <span class="article-read-time">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  7 دقائق قراءة
+                </span>
+              </div>
+              <h3 class="article-title" id="art-title-2" itemprop="headline">
+                حماية الأسطح من التسربات: الأسباب، التشخيص، والحلول الدائمة
+              </h3>
+            </header>
+
+            <section class="article-content" aria-label="محتوى المقال">
+              <p class="article-excerpt">
+                تُعدّ <strong>تسربات الأسطح</strong> من أكثر المشكلات شيوعاً في المباني
+                السعودية، خاصةً مع موسم الأمطار الموسمية. قد يبدو الأمر بسيطاً في البداية،
+                لكنه يمتد ليُلحق أضراراً جسيمة بالبنية التحتية للمبنى.
+              </p>
+              <p class="article-excerpt article-excerpt--secondary">
+                يكمن الحل الدائم في اختيار نظام العزل المائي المناسب المصمم خصيصاً لطبيعة
+                المناخ السعودي، والمقاوم لأشعة الشمس الحارقة وتقلبات درجات الحرارة الشديدة
+                بين الليل والنهار.
+              </p>
+
+              <ul class="article-highlights" aria-label="مؤشرات تسرب الأسطح">
+                <li>
+                  <span class="highlight-icon highlight-icon--teal" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  بقع رطوبة أو تشققات في الجدران والأسقف الداخلية
+                </li>
+                <li>
+                  <span class="highlight-icon highlight-icon--teal" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  تآكل طبقة الطلاء أو تقشر البويا الخارجية بشكل متكرر
+                </li>
+                <li>
+                  <span class="highlight-icon highlight-icon--teal" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  تراكم المياه على السطح بعد هطول الأمطار
+                </li>
+              </ul>
+            </section>
+
+            <footer class="article-footer">
+              <a href="#contact" class="article-read-more article-read-more--teal magnetic-el" aria-label="اقرأ المزيد عن حماية الأسطح من التسربات">
+                اقرأ المقال كاملاً
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </footer>
+          </div>
+        </article>
+
+        <!-- ── Article 3: أهمية العزل الحراري ── -->
+        <article class="article-card io-reveal io-delay-2"
+                 id="article-thermal"
+                 itemscope itemtype="https://schema.org/Article"
+                 aria-labelledby="art-title-3">
+
+          <a href="#contact" class="article-img-wrap" aria-label="اقرأ المزيد عن العزل الحراري">
+            <img src="img_thermal.jpg"
+                 alt="مقارنة بصرية بين الحرارة الخارجية والبرودة الداخلية بفضل العزل الحراري"
+                 class="article-img"
+                 loading="lazy"
+                 width="800" height="450"
+                 itemprop="image" />
+            <span class="article-img-overlay" aria-hidden="true">
+              <span class="article-img-btn">اقرأ المقال</span>
+            </span>
+            <span class="article-category-badge article-category-badge--navy">العزل الحراري</span>
+          </a>
+
+          <div class="article-body" itemprop="articleBody">
+            <header class="article-header">
+              <div class="article-meta">
+                <time datetime="2024-09-05" class="article-date" itemprop="datePublished">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  سبتمبر 2024
+                </time>
+                <span class="article-read-time">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  6 دقائق قراءة
+                </span>
+              </div>
+              <h3 class="article-title" id="art-title-3" itemprop="headline">
+                أهمية العزل الحراري في المناخ السعودي: كيف يوفر الطاقة ويحسن الراحة؟
+              </h3>
+            </header>
+
+            <section class="article-content" aria-label="محتوى المقال">
+              <p class="article-excerpt">
+                مع ارتفاع درجات الحرارة في الرياض لتتجاوز <strong>48 درجة مئوية</strong> صيفاً،
+                يُصبح <strong>العزل الحراري</strong> ضرورةً لا رفاهية. إنه الفرق بين فاتورة
+                كهرباء مرهقة وبيت مريح باستهلاك طاقة معقول.
+              </p>
+              <p class="article-excerpt article-excerpt--secondary">
+                تكشف الدراسات أن المباني غير المعزولة تفقد ما بين 30 إلى 50% من طاقة
+                التبريد عبر الأسطح والجدران. العزل الحراري الاحترافي يُقلص هذا الهدر ويُطيل
+                عمر أجهزة التكييف بصورة ملحوظة.
+              </p>
+
+              <ul class="article-highlights" aria-label="فوائد العزل الحراري">
+                <li>
+                  <span class="highlight-icon highlight-icon--amber" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  تقليل فاتورة الكهرباء بنسبة تصل إلى <strong>40%</strong> سنوياً
+                </li>
+                <li>
+                  <span class="highlight-icon highlight-icon--amber" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  إطالة عمر المبنى وحماية الهيكل الخرساني من التمدد الحراري
+                </li>
+                <li>
+                  <span class="highlight-icon highlight-icon--amber" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  تحسين جودة الهواء الداخلي وتوفير بيئة صحية ومريحة
+                </li>
+              </ul>
+            </section>
+
+            <footer class="article-footer">
+              <a href="#contact" class="article-read-more magnetic-el" aria-label="اقرأ المزيد عن أهمية العزل الحراري">
+                اقرأ المقال كاملاً
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </footer>
+          </div>
+        </article>
+
+      </div><!-- /articles-grid -->
+
+      <!-- Bottom CTA -->
+      <div class="articles-bottom io-reveal io-delay-3">
+        <p class="articles-bottom-text">هل لديك سؤال لم تجد إجابته؟</p>
+        <a href="#contact" class="cta-secondary magnetic-el" aria-label="تواصل مع خبرائنا">
+          <span class="cta-phone-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </span>
+          تحدث مع خبير مجاناً
+        </a>
+      </div>
+
+    </section>
+    <!-- /ARTICLES -->
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="cursor.js"></script>
+  <script src="background.js"></script>
+  <script src="main.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       Fixed Floating Contact Dock (Always follows on scroll)
+  ═══════════════════════════════════════════════════════════ -->
+  
+
+  <style>
+    @keyframes bounceWhatsapp {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.05); }
+    }
+  </style>
+  <!-- ═══════════════════════════════════════════════════════════
+       Floating Contact Bar (WhatsApp, Phone, Facebook)
+  ═══════════════════════════════════════════════════════════ -->
+  
+  <!-- ═══════════════════════════════════════════════════════════
+       Floating Contact Bar (Top-Left: WhatsApp, Phone, Facebook)
+  ═══════════════════════════════════════════════════════════ -->
+  <aside id="floating-contact-dock" style="position: fixed; top: 96px; left: 24px; z-index: 2147483647; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+    <!-- Glassmorphism Dock -->
+    <div style="padding: 6px; border-radius: 16px; background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(16px); border: 1px solid rgba(51, 65, 85, 0.7); box-shadow: 0 16px 36px rgba(0,0,0,0.6); display: flex; flex-direction: column; gap: 6px;">
+      
+      <!-- WhatsApp (With Gentle Pulse) -->
+      <div style="position: relative;" class="dock-item">
+        <a href="https://wa.me/966500000000" target="_blank" style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #34D399; text-decoration: none; position: relative; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.3);" title="واتساب مباشر">
+          <svg style="width: 22px; height: 22px; fill: currentColor;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+
+      <!-- Phone Call -->
+      <div style="position: relative;" class="dock-item">
+        <a href="tel:+966500000000" style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #38BDF8; text-decoration: none; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.3);" title="اتصال مباشر: 0500000000">
+          <svg style="width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2;" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+
+      <!-- Facebook -->
+      <div style="position: relative;" class="dock-item">
+        <a href="https://facebook.com" target="_blank" style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #60A5FA; text-decoration: none; background: rgba(96, 165, 250, 0.12); border: 1px solid rgba(96, 165, 250, 0.3);" title="فيسبوك">
+          <svg style="width: 20px; height: 20px; fill: currentColor;" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Scroll To Top -->
+    <button onclick="window.scrollTo({top:0, behavior:'smooth'})" style="width: 38px; height: 38px; border-radius: 12px; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(12px); border: 1px solid #334155; color: #94A3B8; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 20px rgba(0,0,0,0.4);" title="الصعود لأعلى الصفحة">
+      ↑
+    </button>
+  </aside>
+</body>
+</html>
