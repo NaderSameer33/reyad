@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,11 +21,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const cat = CATEGORIES[slug];
   if (!cat) return { title: "الخدمة غير موجودة" };
   return {
-    title: `${cat.name} بالرياض - شركة النبلاء | معتمد 15 سنة`,
-    description: `${cat.heroDesc} - شركة النبلاء بالرياض. اتصل الآن: 0501884483`,
-    keywords: `${cat.name}, ${cat.title}, عزل بالرياض, شركة النبلاء, كشف تسربات بالرياض`,
+    title: `${cat.name} بالرياض - شركة المعمورة الحديثة | معتمد 15 سنة`,
+    description: `${cat.heroDesc} - شركة المعمورة الحديثة بالرياض. اتصل الآن: 0501884483`,
+    keywords: `${cat.name}, ${cat.title}, عزل بالرياض, شركة المعمورة الحديثة, كشف تسربات بالرياض`,
     openGraph: {
-      title: `${cat.name} بالرياض - شركة النبلاء`,
+      title: `${cat.name} بالرياض - شركة المعمورة الحديثة`,
       description: cat.heroDesc,
       images: [{ url: cat.heroImage }],
       locale: "ar_SA",

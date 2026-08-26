@@ -37,7 +37,7 @@ export default function MapSection() {
           {/* Embedded Map */}
           <div className="relative w-full h-[350px] sm:h-[420px] lg:h-[460px]">
             <iframe
-              title="موقع شركة النبلاء على الخريطة"
+              title="موقع شركة المعمورة الحديثة على الخريطة"
               src={EMBED_URL}
               className="absolute inset-0 w-full h-full border-0 grayscale-[30%] contrast-[1.05]"
               loading="lazy"

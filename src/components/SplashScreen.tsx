@@ -85,9 +85,9 @@ export default function SplashScreen() {
                 {/* Internal Glow Gradient */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-teal-500/20 via-transparent to-sky-400/20" />
 
-                {/* Big Letter 'ن' */}
+                {/* Big Letter 'م' */}
                 <span className="text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-teal-100 via-teal-300 to-teal-500 drop-shadow-[0_6px_25px_rgba(20,184,166,0.8)] font-cairo leading-none">
-                  ن
+                  م
                 </span>
 
                 {/* Top Corner Sparkle */}
@@ -107,7 +107,7 @@ export default function SplashScreen() {
               <div className="flex items-center justify-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-teal-400" />
                 <h1 className="text-3xl sm:text-4xl font-black text-slate-100 font-cairo tracking-wide">
-                  شركة النبلاء
+                  شركة المعمورة الحديثة
                 </h1>
               </div>
               <p className="text-xs sm:text-sm text-teal-300/90 font-bold tracking-wider font-cairo">

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Tajawal, Cairo } from "next/font/google";
 import Script from "next/script";
 import ClientWrapper from "@/components/ClientWrapper";
@@ -23,13 +23,13 @@ const siteDomain = "https://nobalaa-iso.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteDomain),
   title: {
-    default: "شركة النبلاء لعزل الأسطح وكشف التسربات بالرياض | معتمد 15 سنة",
-    template: "%s | شركة النبلاء بالرياض",
+    default: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض | معتمد 15 سنة",
+    template: "%s | شركة المعمورة الحديثة بالرياض",
   },
   description:
-    "شركة النبلاء معتمدة لكشف تسربات المياه بدون تكسير بالرياض وعزل الفوم والبولي يوريثان والعزل المائي والحراري للأسطح والخزانات مع تقرير معتمد لشركة المياه وضمان 15 سنة.",
+    "شركة المعمورة الحديثة معتمدة لكشف تسربات المياه بدون تكسير بالرياض وعزل الفوم والبولي يوريثان والعزل المائي والحراري للأسطح والخزانات مع تقرير معتمد لشركة المياه وضمان 15 سنة.",
   keywords: [
-    "شركة النبلاء",
+    "شركة المعمورة الحديثة",
     "شركة كشف تسربات المياه بالرياض",
     "كشف تسربات المياه بدون تكسير",
     "افضل شركة عزل فوم بالرياض",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     "عزل بولي يوريا الرياض",
     "شركة عزل معتمدة بالرياض",
   ],
-  authors: [{ name: "شركة النبلاء للعزل والمقاولات" }],
-  creator: "شركة النبلاء للعزل والمقاولات",
-  publisher: "شركة النبلاء",
+  authors: [{ name: "شركة المعمورة الحديثة للعزل والمقاولات" }],
+  creator: "شركة المعمورة الحديثة للعزل والمقاولات",
+  publisher: "شركة المعمورة الحديثة",
   robots: {
     index: true,
     follow: true,
@@ -59,11 +59,11 @@ export const metadata: Metadata = {
     canonical: siteDomain,
   },
   openGraph: {
-    title: "شركة النبلاء لعزل الأسطح وكشف التسربات بالرياض | ضمان 15 سنة",
+    title: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض | ضمان 15 سنة",
     description:
       "الشركة الأولى المعتمدة بالرياض لكشف التسربات بدون تكسير وأعمال عزل الفوم والمائي والحراري مع تقارير رسمية معتمد.",
     url: siteDomain,
-    siteName: "شركة النبلاء للعزل والمقاولات",
+    siteName: "شركة المعمورة الحديثة للعزل والمقاولات",
     locale: "ar_SA",
     type: "website",
     images: [
@@ -71,13 +71,13 @@ export const metadata: Metadata = {
         url: "/images/projects/project_real_01.jpg",
         width: 1200,
         height: 630,
-        alt: "شركة النبلاء لعزل الأسطح وكشف التسربات بالرياض",
+        alt: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "شركة النبلاء لعزل الأسطح وكشف التسربات بالرياض",
+    title: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
     description: "كشف تسربات المياه بدون تكسير وعزل الفوم المعتمد مع ضمان 15 سنة.",
     images: ["/images/projects/project_real_01.jpg"],
   },
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLdSchema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "شركة النبلاء لعزل الأسطح وكشف التسربات بالرياض",
+    "name": "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
     "image": `${siteDomain}/images/projects/project_real_01.jpg`,
     "@id": siteDomain,
     "url": siteDomain,

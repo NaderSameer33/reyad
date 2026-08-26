@@ -28,7 +28,7 @@ export default function ProtectedImage({ src, alt, priority }: ProtectedImagePro
       {/* Copyright watermark */}
       <div className="absolute top-3 left-3 z-20 flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-900/80 backdrop-blur-sm border border-slate-700/60 pointer-events-none select-none">
         <Lock className="w-3 h-3 text-teal-400" />
-        <span className="text-[9px] text-slate-300 font-bold">© النبلاء - محمي</span>
+        <span className="text-[9px] text-slate-300 font-bold">© المعمورة الحديثة - محمي</span>
       </div>
       <Image
         src={src}

@@ -44,7 +44,7 @@ export default function ThermalComparison() {
             <div className="flex justify-between items-start">
               <span className="px-3 py-1 rounded-full bg-teal-500/20 border border-teal-400 text-teal-200 font-bold text-xs flex items-center gap-1.5 backdrop-blur-md">
                 <ShieldCheck className="w-3.5 h-3.5 text-teal-300" />
-                بعد العزل المعتمد (النبلاء)
+                بعد العزل المعتمد (المعمورة الحديثة)
               </span>
               <div className="text-right">
                 <div className="text-xl sm:text-2xl font-black text-teal-300 font-cairo flex items-center justify-end gap-1">

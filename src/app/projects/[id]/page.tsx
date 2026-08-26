@@ -21,9 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const proj = allProjects.find((p) => p.id === id);
   if (!proj) return { title: "المشروع غير موجود" };
   return {
-    title: `${proj.title} | مشاريع شركة النبلاء للعزل بالرياض`,
-    description: `${proj.summary} - شركة النبلاء للعزل والمقاولات بالرياض. ضمان ${proj.warranty}. اتصل الآن: 0501884483`,
-    keywords: `${proj.categoryName}, ${proj.district}, عزل الرياض, شركة النبلاء, ${proj.title}`,
+    title: `${proj.title} | مشاريع شركة المعمورة الحديثة للعزل بالرياض`,
+    description: `${proj.summary} - شركة المعمورة الحديثة للعزل والمقاولات بالرياض. ضمان ${proj.warranty}. اتصل الآن: 0501884483`,
+    keywords: `${proj.categoryName}, ${proj.district}, عزل الرياض, شركة المعمورة الحديثة, ${proj.title}`,
     openGraph: {
       title: proj.title,
       description: proj.summary,
@@ -50,7 +50,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     .slice(0, 3);
 
   const whatsappMsg = encodeURIComponent(
-    `مرحباً شركة النبلاء، أستفسر عن تنفيذ مشروع مشابه لـ "${proj.title}" في ${proj.district}.`
+    `مرحباً شركة المعمورة الحديثة، أستفسر عن تنفيذ مشروع مشابه لـ "${proj.title}" في ${proj.district}.`
   );
 
   // Structured Data for SEO
@@ -61,7 +61,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     "description": proj.summary,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "شركة النبلاء للعزل والمقاولات",
+      "name": "شركة المعمورة الحديثة للعزل والمقاولات",
       "telephone": "+966501884483",
       "address": { "@type": "PostalAddress", "addressLocality": "الرياض", "addressCountry": "SA" }
     },

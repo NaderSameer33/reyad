@@ -8,7 +8,7 @@ import ParallaxBackground from "@/components/ParallaxBackground";
 import { Building, MapPin, ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "معرض سابقة الأعمال والمشاريع المنفذة بالرياض | شركة النبلاء",
+  title: "معرض سابقة الأعمال والمشاريع المنفذة بالرياض | شركة المعمورة الحديثة",
   description: "استعراض أكثر من 60 مشروعاً موثقاً لأعمال كشف تسربات المياه وعزل الفوم والعزل المائي والحراري في مختلف أحياء مدينة الرياض.",
 };
 

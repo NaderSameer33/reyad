@@ -37,10 +37,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-10 h-10 rounded-xl bg-slate-800 border border-teal-500/30 text-teal-300 flex items-center justify-center font-black text-lg shadow-sm">
-              ن
+              م
             </div>
             <div>
-              <span className="text-xl font-black text-slate-100 font-cairo block leading-tight">شركة النبلاء</span>
+              <span className="text-xl font-black text-slate-100 font-cairo block leading-tight">شركة المعمورة الحديثة</span>
               <span className="text-[10px] text-teal-300 font-bold block">كشف التسربات والعزل الشامل بالرياض</span>
             </div>
           </Link>

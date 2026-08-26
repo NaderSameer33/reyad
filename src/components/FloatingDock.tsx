@@ -15,7 +15,7 @@ export default function FloatingDock() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const whatsappUrl = "https://wa.me/966501884483?text=" + encodeURIComponent("مرحباً شركة النبلاء، أستفسر عن خدمات كشف تسربات المياه والعزل المعتمد بالرياض.");
+  const whatsappUrl = "https://wa.me/966501884483?text=" + encodeURIComponent("مرحباً شركة المعمورة الحديثة، أستفسر عن خدمات كشف تسربات المياه والعزل المعتمد بالرياض.");
 
   const socialLinks = [
     {

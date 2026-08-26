@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Pause, Video, ShieldCheck, MapPin, X, Lock, Volume2, VolumeX, Sparkles } from "lucide-react";
@@ -199,7 +199,7 @@ export default function VideoShowcase() {
                     {/* Protection Badge */}
                     <div className="absolute top-3 left-3 z-10 flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-900/80 backdrop-blur-sm border border-slate-700/60">
                       <Lock className="w-3 h-3 text-teal-400" />
-                      <span className="text-[9px] text-slate-300 font-bold">© النبلاء</span>
+                      <span className="text-[9px] text-slate-300 font-bold">© المعمورة الحديثة</span>
                     </div>
 
                     {/* Center Play Button Overlay */}
@@ -285,7 +285,7 @@ export default function VideoShowcase() {
                 {/* Protected Anti-Theft Watermark Overlay */}
                 <div className="absolute top-4 left-4 z-20 flex items-center gap-1 px-3 py-1 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/60 pointer-events-none select-none">
                   <ShieldCheck className="w-4 h-4 text-teal-400" />
-                  <span className="text-xs text-slate-200 font-bold">شركة النبلاء - توثيق ميداني</span>
+                  <span className="text-xs text-slate-200 font-bold">شركة المعمورة الحديثة - توثيق ميداني</span>
                 </div>
 
                 <video

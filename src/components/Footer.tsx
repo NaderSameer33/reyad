@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Link from "next/link";
 import { ShieldCheck, Phone, Mail, MapPin, CheckCircle } from "lucide-react";
 
@@ -11,9 +11,9 @@ export default function Footer() {
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <span className="w-8 h-8 rounded-lg bg-[#2563A6] text-white flex items-center justify-center font-black text-sm">
-              ر
+              م
             </span>
-            <span className="text-base font-black text-white font-cairo">شركة النبلاء</span>
+            <span className="text-base font-black text-white font-cairo">شركة المعمورة الحديثة</span>
           </div>
           <p className="text-xs text-[#94A3B8] leading-relaxed">
             الشركة المعتمدة لكشف تسربات المياه بدون تكسير والعزل الشامل للأسطح والخزانات في مدينة الرياض بخبرة تتجاوز 15 عاماً وضمان رسمي موثق.
@@ -73,7 +73,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto pt-6 border-t border-[#334155] flex flex-col sm:flex-row items-center justify-between gap-3 text-[#64748B] text-[11px]">
-        <p>© {new Date().getFullYear()} شركة النبلاء لحلول العزل وكشف التسربات. جميع الحقوق محفوظة.</p>
+        <p>© {new Date().getFullYear()} شركة المعمورة الحديثة لحلول العزل وكشف التسربات. جميع الحقوق محفوظة.</p>
         <p className="flex items-center gap-1.5">
           <span>متوافق مع كود البناء السعودي SBC</span>
           <CheckCircle className="w-3.5 h-3.5 text-[#38BDF8]" />

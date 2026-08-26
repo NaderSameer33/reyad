@@ -79,7 +79,7 @@ export default function ContactSection() {
   };
 
   const whatsappMsg = encodeURIComponent(
-    `مرحباً شركة النبلاء، أرغب في حجز موعد معاينة مجانية.\nالاسم: ${formData.name || "عميل"}\nالحي: ${formData.district}\nالخدمة: ${formData.service}`
+    `مرحباً شركة المعمورة الحديثة، أرغب في حجز موعد معاينة مجانية.\nالاسم: ${formData.name || "عميل"}\nالحي: ${formData.district}\nالخدمة: ${formData.service}`
   );
 
   return (

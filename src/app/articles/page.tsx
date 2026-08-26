@@ -8,7 +8,7 @@ import ParallaxBackground from "@/components/ParallaxBackground";
 import { BookOpen, Clock, Calendar, ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "مكتبة المقالات والأدلة الفنية لكشف التسربات والعزل | شركة النبلاء",
+  title: "مكتبة المقالات والأدلة الفنية لكشف التسربات والعزل | شركة المعمورة الحديثة",
   description: "أكبر مكتبة معرفية متخصصة في كشف تسربات المياه، أسعار عزل الأسطح، اشتراطات كود البناء السعودي، وطرق توفير الطاقة في الرياض.",
 };
 

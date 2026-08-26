@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const article = allArticles.find((a) => a.slug === slug);
   if (!article) return { title: "المقال غير موجود" };
   return {
-    title: `${article.title} | شركة النبلاء للعزل وكشف التسربات`,
+    title: `${article.title} | شركة المعمورة الحديثة للعزل وكشف التسربات`,
     description: article.excerpt,
   };
 }
@@ -38,7 +38,7 @@ export default async function ArticleReaderPage({ params }: { params: Promise<{ 
     .slice(0, 3);
 
   const whatsappMsg = encodeURIComponent(
-    `مرحباً شركة النبلاء، قرأت مقال "${article.title}" وأرغب في استشارة هندسية حول عزل منزلي.`
+    `مرحباً شركة المعمورة الحديثة، قرأت مقال "${article.title}" وأرغب في استشارة هندسية حول عزل منزلي.`
   );
 
   return (
@@ -88,7 +88,7 @@ export default async function ArticleReaderPage({ params }: { params: Promise<{ 
                 م
               </div>
               <div className="text-xs">
-                <span className="font-bold text-[#1E293B] block">إشراف: الفريق الهندسي لشركة النبلاء</span>
+                <span className="font-bold text-[#1E293B] block">إشراف: الفريق الهندسي لشركة المعمورة الحديثة</span>
                 <span className="text-[#475569]">مهندسو كشف التسربات والعزل المعتمدون بالرياض</span>
               </div>
             </div>
