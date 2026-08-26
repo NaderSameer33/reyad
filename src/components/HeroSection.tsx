@@ -95,7 +95,7 @@ export default function HeroSection() {
 
               <MagneticElement strength={10} className="w-full sm:w-auto">
                 <a
-                  href="https://wa.me/966501884483"
+                  href="tel:0501884483"
                   className="w-full sm:w-auto justify-center px-5 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-slate-200 font-bold text-xs sm:text-sm flex items-center gap-2 border border-slate-700 shadow-sm transition-all font-cairo"
                 >
                   <Phone className="w-4 h-4 text-sky-400" />

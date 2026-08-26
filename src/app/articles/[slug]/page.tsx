@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -158,7 +158,7 @@ export default async function ArticleReaderPage({ params }: { params: Promise<{ 
 
           <div className="flex gap-2">
             <a
-              href="https://wa.me/966501884483"
+              href="tel:0501884483"
               className="px-5 py-2.5 rounded-xl bg-[#1D5D9B] hover:bg-[#164879] text-white font-bold text-xs flex items-center gap-1.5 font-cairo transition-colors"
             >
               <Phone className="w-3.5 h-3.5" />

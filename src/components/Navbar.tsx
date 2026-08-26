@@ -98,7 +98,7 @@ export default function Navbar() {
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
             <a
-              href="https://wa.me/966501884483"
+              href="tel:0501884483"
               className="flex items-center gap-2 text-xs font-bold text-slate-200 bg-slate-800/80 hover:bg-slate-800 px-3.5 py-2.5 rounded-xl border border-slate-700/80 transition-colors font-cairo"
             >
               <Phone className="w-4 h-4 text-teal-400" />
@@ -174,10 +174,10 @@ export default function Navbar() {
               مكتبة المقالات الهندسية
             </Link>
             <a
-              href="https://wa.me/966501884483"
+              href="tel:0501884483"
               className="w-full text-center py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs shadow-md transition-all font-cairo mt-1"
             >
-              اتصال سريع / واتساب: 0501884483
+              اتصال مباشر: 0501884483
             </a>
           </div>
         </div>

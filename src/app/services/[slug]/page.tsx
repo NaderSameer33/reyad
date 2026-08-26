@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -112,7 +112,7 @@ export default async function ServiceCategoryPage({ params }: { params: Promise<
                 </a>
 
                 <a
-                  href="https://wa.me/966501884483"
+                  href="tel:0501884483"
                   className="px-5 py-3 rounded-xl bg-[#E8EEF3] hover:bg-[#DCE5ED] text-[#1E293B] font-bold text-xs sm:text-sm border border-[#CBD5E1] shadow-sm transition-colors font-cairo"
                 >
                   <Phone className="w-4 h-4 text-[#2563A6] inline ml-1.5" />

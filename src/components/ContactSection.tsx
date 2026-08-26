@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React, { useState } from "react";
 import { Phone, MapPin, Send, MessageCircle, Clock, Loader2 } from "lucide-react";
 
@@ -109,7 +109,7 @@ export default function ContactSection() {
 
             <div className="space-y-3">
               <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                href="tel:0501884483"
                 className="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/70 hover:border-teal-500/40 transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-slate-800 text-teal-300 border border-slate-700 flex items-center justify-center shrink-0">

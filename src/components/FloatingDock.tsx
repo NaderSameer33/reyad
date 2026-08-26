@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -37,7 +37,7 @@ export default function FloatingDock() {
     {
       id: "phone",
       label: "اتصل بنا",
-      href: "https://wa.me/966501884483",
+      href: "tel:0501884483",
       target: "_self",
       colorClass: "text-sky-400 hover:text-sky-300",
       bgHover: "hover:bg-sky-500/15",

@@ -55,10 +55,10 @@ export default function Footer() {
         <div className="space-y-2.5">
           <h4 className="text-white font-bold font-cairo text-sm">الاتصال المباشر</h4>
           <div className="space-y-2 text-slate-300 text-xs">
-            <div className="flex items-center gap-2">
+            <a href="tel:0501884483" className="flex items-center gap-2 hover:text-sky-300 transition-colors">
               <Phone className="w-4 h-4 text-[#38BDF8] shrink-0" />
               <span dir="ltr" className="font-bold">0501884483</span>
-            </div>
+            </a>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-[#38BDF8] shrink-0" />
               <span>info@reyad-sa.com</span>
