@@ -73,6 +73,17 @@ export default function Footer() {
             <span className="text-[11px] font-bold text-slate-400 block mb-2 font-cairo">تابعنا على منصات التواصل:</span>
             <div className="flex items-center gap-2">
               <a
+                href="https://www.tiktok.com/@alnubala.lilmuqawalat?_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-rose-500/20 text-rose-400 border border-slate-700 hover:border-rose-500/40 flex items-center justify-center transition-colors"
+                title="حسابنا على تيك توك (TikTok)"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.36a6.34 6.34 0 0 0-1-.08 6.34 6.34 0 1 0 6.34 6.34V9.05a8.28 8.28 0 0 0 4.91 1.58V7.19a4.81 4.81 0 0 1-1-.5z" />
+                </svg>
+              </a>
+              <a
                 href="https://x.com/detectleaks"
                 target="_blank"
                 rel="noopener noreferrer"
