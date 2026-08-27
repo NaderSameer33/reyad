@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
 import { CATEGORIES, ProjectItem } from "@/data/categories";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nobalaa-iso.com";
-
+  const baseUrl = SITE_URL;
   // Core pages
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -27,15 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Services pages
-  const servicePages: MetadataRoute.Sitemap = Object.keys(CATEGORIES).map((slug) => ({
-    url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly",
-    priority: 0.9,
-  }));
+  const servicePages: MetadataRoute.Sitemap = Object.keys(CATEGORIES).map(
+    (slug) => ({
+      url: `${baseUrl}/services/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    }),
+  );
 
   // Project Detail pages
-  const allProjects: ProjectItem[] = Object.values(CATEGORIES).flatMap((cat) => cat.gallery);
+  const allProjects: ProjectItem[] = Object.values(CATEGORIES).flatMap(
+    (cat) => cat.gallery,
+  );
   const projectPages: MetadataRoute.Sitemap = allProjects.map((p) => ({
     url: `${baseUrl}/projects/${p.id}`,
     lastModified: new Date(),

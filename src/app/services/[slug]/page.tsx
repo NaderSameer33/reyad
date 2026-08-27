@@ -11,6 +11,7 @@ import { ShieldCheck, Award, Phone, ArrowLeft } from "lucide-react";
 
 import type { Metadata } from "next";
 import Script from "next/script";
+import { SITE_URL } from "@/lib/site";
 
 export async function generateStaticParams() {
   return Object.keys(CATEGORIES).map((slug) => ({ slug }));
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "website",
     },
     alternates: {
-      canonical: `https://nobalaa-iso.com/services/${cat.slug}`,
+      canonical: `${SITE_URL}/services/${cat.slug}`,
     },
   };
 }

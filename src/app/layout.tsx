@@ -1,7 +1,8 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Tajawal, Cairo } from "next/font/google";
 import Script from "next/script";
 import ClientWrapper from "@/components/ClientWrapper";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const tajawal = Tajawal({
@@ -18,10 +19,8 @@ const cairo = Cairo({
   display: "swap",
 });
 
-const siteDomain = "https://nobalaa-iso.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteDomain),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض | معتمد 15 سنة",
     template: "%s | شركة المعمورة الحديثة بالرياض",
@@ -56,13 +55,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: siteDomain,
+    canonical: SITE_URL,
   },
   openGraph: {
     title: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض | ضمان 15 سنة",
     description:
       "الشركة الأولى المعتمدة بالرياض لكشف التسربات بدون تكسير وأعمال عزل الفوم والمائي والحراري مع تقارير رسمية معتمد.",
-    url: siteDomain,
+    url: SITE_URL,
     siteName: "شركة المعمورة الحديثة للعزل والمقاولات",
     locale: "ar_SA",
     type: "website",
@@ -89,9 +88,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
-    "image": `${siteDomain}/images/projects/project_real_01.jpg`,
-    "@id": siteDomain,
-    "url": siteDomain,
+    "image": `${SITE_URL}/images/projects/project_real_01.jpg`,
+    "@id": SITE_URL,
+    "url": SITE_URL,
     "telephone": "+966501884483",
     "priceRange": "$$",
     "address": {

@@ -1,14 +1,13 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://nobalaa-iso.com";
-
   return {
     rules: {
       userAgent: "*",
       allow: "/",
       disallow: ["/private/", "/api/"],
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
