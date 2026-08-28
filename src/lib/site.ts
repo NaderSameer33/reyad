@@ -4,8 +4,7 @@
  * to override the default. Change this to your custom domain once purchased.
  */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://reyad-alpha.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://maamoura.agency";
 
 
 
-  
