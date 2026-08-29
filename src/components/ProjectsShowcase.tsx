@@ -85,10 +85,12 @@ export default function ProjectsShowcase() {
                     className="bg-slate-900/75 backdrop-blur-md border border-slate-800 hover:border-teal-500/40 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-200 flex flex-col h-full group"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image 
-                        src={proj.image} 
+                      <Image
+                        src={proj.image}
                         alt={proj.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                        loading="lazy"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-2.5 right-2.5">

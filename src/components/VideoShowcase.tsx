@@ -1,8 +1,9 @@
-﻿"use client";
+"use client";
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, Pause, Video, ShieldCheck, MapPin, X, Lock, Volume2, VolumeX, Sparkles } from "lucide-react";
 import TiltCard from "@/components/TiltCard";
+import Image from "next/image";
 
 interface VideoItem {
   id: string;
@@ -175,15 +176,15 @@ export default function VideoShowcase() {
                   }}
                   className="bg-slate-900/90 border border-slate-800 hover:border-teal-500/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full cursor-pointer group"
                 >
-                  {/* Video Thumbnail Box */}
+                  {/* Video Thumbnail Box — only poster image, no video src loaded until modal opens */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
-                    <video
-                      src={vid.videoUrl}
-                      poster={vid.poster}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none"
-                      muted
-                      playsInline
-                      onContextMenu={(e) => e.preventDefault()}
+                    <Image
+                      src={vid.poster}
+                      alt={vid.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none"
+                      loading="lazy"
                     />
 
                     {/* Dark Gradient Overlay */}

@@ -112,3 +112,32 @@
   animation: radarPing 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
   pointer-events: none;
 }
+
+/* ── GPU Compositing Hints ── */
+/* Promote animated elements to their own GPU layer to avoid layout thrashing */
+#zen-3d-wave-canvas {
+  will-change: contents;
+  transform: translateZ(0);
+}
+
+.animate-marquee {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce paint area for fixed overlays */
+.glow-card {
+  transform: translateZ(0);
+}
+
+/* Prevent layout shifts from images loading */
+img {
+  height: auto;
+}
+
+/* Optimized scrollbar — prevents layout shifts */
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}

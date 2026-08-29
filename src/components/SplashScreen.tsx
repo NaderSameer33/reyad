@@ -7,10 +7,10 @@ export default function SplashScreen() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Splash screen visible for 2.5s then opens the site smoothly
+    // Splash screen visible for 1.8s then opens the site smoothly
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 2500);
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, []);
