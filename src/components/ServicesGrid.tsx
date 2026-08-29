@@ -73,7 +73,7 @@ export default function ServicesGrid() {
             خدمات متخصصة ومعتمدة
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-100 font-cairo">
-            خدمات كشف التسربات <span className="text-teal-300">والعزل المعتمد بالرياض</span>
+            خدمات <span className="text-teal-300">عزل اسطح متكاملة في الرياض</span> (فوم، مائي، حراري)
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto mt-2 font-normal">
             حلول هندسية متكاملة بأحدث الأجهزة والتقنيات لحماية المباني وضمان راحة البال.

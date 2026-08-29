@@ -121,6 +121,13 @@ export default async function ArticleReaderPage({ params }: { params: Promise<{ 
             <li className="flex items-center gap-2">✓ أهمية اختيار المواد المعتمدة والمطابقة لكود البناء السعودي SBC.</li>
             <li className="flex items-center gap-2">✓ كيف يضمن العزل الصحيح حماية خرسانة المبنى وتوفير 40%+ من فواتير الكهرباء.</li>
             <li className="flex items-center gap-2">✓ ضرورة الفحص بكاميرات FLIR الحرارية واختبار الغمر المائي لمدة 48 ساعة.</li>
+            <li className="flex items-start gap-2">
+              ✓ للحصول على أفضل نتيجة، تواصل مع{" "}
+              <Link href="https://www.maamoura.agency/" className="text-[#2563A6] font-bold underline hover:text-[#164879] transition-colors">
+                شركة عزل اسطح بالرياض
+              </Link>
+              {" "}المعتمدة لضمان جودة التنفيذ.
+            </li>
           </ul>
         </div>
 
@@ -153,6 +160,11 @@ export default async function ArticleReaderPage({ params }: { params: Promise<{ 
             </h3>
             <p className="text-xs text-[#475569]">
               مهندسونا متاحون لزيارة موقعك في الرياض وتقديم تقرير هندسي مجاني.
+              {" "}تواصل مع{" "}
+              <Link href="https://www.maamoura.agency/" className="text-[#2563A6] font-bold underline hover:text-[#164879] transition-colors">
+                افضل شركة عزل في الرياض
+              </Link>
+              {" "}الآن.
             </p>
           </div>
 

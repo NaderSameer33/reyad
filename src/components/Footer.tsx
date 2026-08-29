@@ -28,11 +28,12 @@ export default function Footer() {
         <div className="space-y-2.5">
           <h4 className="text-white font-bold font-cairo text-sm">أقسام الخدمات</h4>
           <ul className="space-y-1.5 text-[#94A3B8]">
-            <li><Link href="/services/leak-detection" className="hover:text-[#38BDF8] transition-colors">كشف تسربات المياه بالرياض</Link></li>
+            <li><Link href="/services/leak-detection" className="hover:text-[#38BDF8] transition-colors">كشف تسربات المياه بالرياض،</Link></li>
             <li><Link href="/services/foam" className="hover:text-[#38BDF8] transition-colors">عزل فوم بولي يوريثان معتمد</Link></li>
             <li><Link href="/services/waterproofing" className="hover:text-[#38BDF8] transition-colors">العزل المائي للأسطح والخزانات</Link></li>
             <li><Link href="/services/tanks" className="hover:text-[#38BDF8] transition-colors">عزل وتنظيف خزانات المياه</Link></li>
             <li><Link href="/services/thermal" className="hover:text-[#38BDF8] transition-colors">العزل الحراري وتوفير الطاقة</Link></li>
+            <li><Link href="https://www.maamoura.agency/" className="hover:text-[#38BDF8] transition-colors font-bold text-slate-200">شركة عزل اسطح بالرياض ←</Link></li>
           </ul>
         </div>
 
@@ -124,10 +125,20 @@ export default function Footer() {
 
       <div className="max-w-6xl mx-auto pt-6 border-t border-[#334155] flex flex-col sm:flex-row items-center justify-between gap-3 text-[#64748B] text-[11px]">
         <p>© {new Date().getFullYear()} شركة المعمورة الحديثة لحلول العزل وكشف التسربات. جميع الحقوق محفوظة.</p>
-        <p className="flex items-center gap-1.5">
-          <span>متوافق مع كود البناء السعودي SBC</span>
-          <CheckCircle className="w-3.5 h-3.5 text-[#38BDF8]" />
-        </p>
+        <div className="flex flex-wrap items-center gap-3 text-center">
+          <Link href="https://www.maamoura.agency/" className="text-[#64748B] hover:text-[#38BDF8] transition-colors">
+            شركة عزل بالرياض
+          </Link>
+          <span>|</span>
+          <Link href="https://www.maamoura.agency/" className="text-[#64748B] hover:text-[#38BDF8] transition-colors">
+            عزل في الرياض
+          </Link>
+          <span>|</span>
+          <p className="flex items-center gap-1.5">
+            <span>متوافق مع كود البناء السعودي SBC</span>
+            <CheckCircle className="w-3.5 h-3.5 text-[#38BDF8]" />
+          </p>
+        </div>
       </div>
     </footer>
   );

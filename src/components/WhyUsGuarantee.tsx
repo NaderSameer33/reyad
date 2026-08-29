@@ -47,7 +47,7 @@ export default function WhyUsGuarantee() {
             <span>معايير الجودة والاعتمادات</span>
           </span>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-100 font-cairo">
-            لماذا يثق بنا <span className="text-teal-300">عملاؤنا في الرياض؟</span>
+            لماذا المعمورة هي <span className="text-teal-300">افضل شركة عزل في الرياض؟</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto mt-2">
             نلتزم بأعلى معايير الأمانة الهندسية والجودة لنمنحك حماية تدوم لسنوات طويلة.

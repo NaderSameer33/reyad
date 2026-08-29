@@ -42,7 +42,7 @@ export default function HeroSection() {
               transition={{ delay: 0.2, duration: 0.7 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-100 font-cairo leading-tight"
             >
-              كشف تسربات المياه <span className="text-teal-300 font-black">بدون تكسير</span> وعزل شامل معتمد بالرياض
+              <span className="text-teal-300 font-black">شركة عزل اسطح بالرياض</span> - افضل خدمات العزل المائي والحراري والفوم
             </motion.h1>
 
             {/* Description */}

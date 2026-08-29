@@ -22,19 +22,23 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض | معتمد 15 سنة",
-    template: "%s | شركة المعمورة الحديثة بالرياض",
+    default: "افضل شركة عزل اسطح بالرياض | شركة المعمورة الحديثة للعزل في الرياض",
+    template: "%s | شركة المعمورة الحديثة - افضل شركة عزل بالرياض",
   },
   description:
-    "شركة المعمورة الحديثة معتمدة لكشف تسربات المياه بدون تكسير بالرياض وعزل الفوم والبولي يوريثان والعزل المائي والحراري للأسطح والخزانات مع تقرير معتمد لشركة المياه وضمان 15 سنة.",
+    "شركة المعمورة الحديثة افضل شركة عزل اسطح بالرياض متخصصة في عزل مائي وحراري وفوم بأعلى معايير الجودة وضمان معتمد 15 سنة. تواصل مع افضل شركة عزل في الرياض الآن للحصول على معاينة مجانية.",
   keywords: [
+    "شركة عزل اسطح بالرياض",
+    "افضل شركة عزل في الرياض",
+    "شركة عزل بالرياض",
+    "عزل في الرياض",
+    "عزل اسطح بالرياض",
     "شركة المعمورة الحديثة",
     "شركة كشف تسربات المياه بالرياض",
     "كشف تسربات المياه بدون تكسير",
     "افضل شركة عزل فوم بالرياض",
     "عزل مائي وحراري بالرياض",
     "شركة عزل خزانات بالرياض",
-    "عزل اسطح بالرياض",
     "عزل فوم بولي يوريثان",
     "تقرير معتمد لشركة المياه بالرياض",
     "تخفيض فاتورة المياه بالرياض",
@@ -58,11 +62,11 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض | ضمان 15 سنة",
+    title: "افضل شركة عزل اسطح بالرياض | شركة المعمورة الحديثة للعزل في الرياض",
     description:
-      "الشركة الأولى المعتمدة بالرياض لكشف التسربات بدون تكسير وأعمال عزل الفوم والمائي والحراري مع تقارير رسمية معتمد.",
+      "شركة المعمورة الحديثة افضل شركة عزل اسطح بالرياض متخصصة في عزل مائي وحراري وفوم مع تقارير رسمية معتمدة وضمان 15 سنة.",
     url: SITE_URL,
-    siteName: "شركة المعمورة الحديثة للعزل والمقاولات",
+    siteName: "شركة المعمورة الحديثة - افضل شركة عزل بالرياض",
     locale: "ar_SA",
     type: "website",
     images: [
@@ -70,14 +74,14 @@ export const metadata: Metadata = {
         url: "/images/projects/project_real_01.jpg",
         width: 1200,
         height: 630,
-        alt: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
+        alt: "افضل شركة عزل اسطح بالرياض - شركة المعمورة الحديثة",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
-    description: "كشف تسربات المياه بدون تكسير وعزل الفوم المعتمد مع ضمان 15 سنة.",
+    title: "افضل شركة عزل اسطح بالرياض | شركة المعمورة الحديثة",
+    description: "شركة عزل اسطح بالرياض متخصصة في عزل مائي وحراري وفوم معتمد مع ضمان 15 سنة.",
     images: ["/images/projects/project_real_01.jpg"],
   },
   icons: {
@@ -96,16 +100,26 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Global LocalBusiness Structured Data Schema
+  // Global LocalBusiness Structured Data Schema - محسّن لاستهداف كلمات عزل الأسطح بالرياض
   const jsonLdSchema = {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
-    "name": "شركة المعمورة الحديثة لعزل الأسطح وكشف التسربات بالرياض",
+    "name": "شركة المعمورة الحديثة لعزل الاسطح بالرياض",
+    "alternateName": [
+      "افضل شركة عزل في الرياض",
+      "شركة عزل اسطح بالرياض",
+      "شركة عزل بالرياض",
+      "عزل في الرياض",
+    ],
     "image": `${SITE_URL}/images/projects/project_real_01.jpg`,
     "@id": SITE_URL,
     "url": SITE_URL,
     "telephone": "+966501884483",
     "priceRange": "$$",
+    "areaServed": {
+      "@type": "City",
+      "name": "Riyadh",
+    },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "طريق الملك فهد، حي الصحافة",
@@ -128,6 +142,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "sameAs": [
       "https://wa.me/966501884483",
     ],
+    "description": "افضل شركة عزل اسطح بالرياض متخصصة في عزل الفوم والعزل المائي والحراري المعتمد مع ضمان 15 سنة.",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
@@ -135,13 +150,50 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
   };
 
+  // FAQPage Schema لتعزيز الظهور في نتائج البحث المحلي
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ما هي افضل شركة عزل اسطح بالرياض؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "شركة المعمورة الحديثة هي افضل شركة عزل اسطح بالرياض، متخصصة في عزل الفوم والعزل المائي والحراري مع ضمان رسمي 15 سنة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كيف أجد شركة عزل بالرياض بأسعار مناسبة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "تواصل مع شركة المعمورة الحديثة أفضل شركة عزل في الرياض للحصول على معاينة مجانية وأسعار تنافسية لجميع أعمال العزل في الرياض."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ما هي خدمات العزل في الرياض التي تقدمها شركة المعمورة؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "تقدم شركة المعمورة الحديثة خدمات العزل في الرياض الشاملة: عزل اسطح بالفوم، العزل المائي، العزل الحراري، عزل خزانات المياه، وكشف التسربات بدون تكسير."
+        }
+      },
+    ],
+  };
+
   return (
     <html lang="ar" dir="rtl" className={`${tajawal.variable} ${cairo.variable}`}>
       <head>
         <Script
-          id="global-jsonld-nobalaa"
+          id="global-jsonld-localbusiness"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+        />
+        <Script
+          id="global-jsonld-faqpage"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body className="bg-brand-navyDark font-tajawal text-brand-light overflow-x-hidden antialiased">
