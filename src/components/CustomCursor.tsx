@@ -20,6 +20,11 @@ export default function CustomCursor() {
     const glow = glowRef.current;
     if (!dot || !ring || !glow) return;
 
+    // Re-assign as non-null for TypeScript's flow analysis in inner functions
+    const dotEl  = dot  as HTMLDivElement;
+    const ringEl = ring as HTMLDivElement;
+    const glowEl = glow as HTMLDivElement;
+
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let ringX  = mouseX;
@@ -37,9 +42,9 @@ export default function CustomCursor() {
     const show = () => {
       if (!isVisible) {
         isVisible = true;
-        dot.style.opacity  = "1";
-        ring.style.opacity = "1";
-        glow.style.opacity = "1";
+        dotEl.style.opacity  = "1";
+        ringEl.style.opacity = "1";
+        glowEl.style.opacity = "1";
       }
     };
 
@@ -48,7 +53,7 @@ export default function CustomCursor() {
       mouseY = e.clientY;
       show();
       // Dot follows instantly — no interpolation needed for inner dot
-      dot.style.transform = `translate3d(${mouseX}px,${mouseY}px,0)`;
+      dotEl.style.transform = `translate3d(${mouseX}px,${mouseY}px,0)`;
     };
 
     const onScroll = () => {
@@ -69,9 +74,9 @@ export default function CustomCursor() {
     };
     const onMouseLeave = () => {
       isVisible = false;
-      dot.style.opacity  = "0";
-      ring.style.opacity = "0";
-      glow.style.opacity = "0";
+      dotEl.style.opacity  = "0";
+      ringEl.style.opacity = "0";
+      glowEl.style.opacity = "0";
     };
     const onMouseEnter = () => { show(); };
 
@@ -88,38 +93,38 @@ export default function CustomCursor() {
 
     function applyRingSize() {
       const size = isHovered ? "56px" : isClicked ? "24px" : "36px";
-      ring.style.width  = size;
-      ring.style.height = size;
+      ringEl.style.width  = size;
+      ringEl.style.height = size;
     }
 
     function applyHoverStyles() {
       // Ring styles
       const ringSize = isHovered ? "56px" : isClicked ? "24px" : "36px";
-      ring.style.width  = ringSize;
-      ring.style.height = ringSize;
-      ring.style.border = isHovered
+      ringEl.style.width  = ringSize;
+      ringEl.style.height = ringSize;
+      ringEl.style.border = isHovered
         ? "1.5px solid rgba(45,212,191,0.95)"
         : "1px solid rgba(56,189,248,0.6)";
-      ring.style.background = isHovered
+      ringEl.style.background = isHovered
         ? "rgba(45,212,191,0.1)"
         : "rgba(56,189,248,0.02)";
-      ring.style.backdropFilter = isHovered ? "blur(3px)" : "none";
-      ring.style.boxShadow = isHovered
+      ringEl.style.backdropFilter = isHovered ? "blur(3px)" : "none";
+      ringEl.style.boxShadow = isHovered
         ? "0 0 24px 3px rgba(45,212,191,0.35),inset 0 0 10px rgba(45,212,191,0.2)"
         : "0 0 10px rgba(56,189,248,0.25)";
 
       // Dot styles
-      dot.style.width           = isHovered ? "7px" : "5px";
-      dot.style.height          = isHovered ? "7px" : "5px";
-      dot.style.backgroundColor = isHovered ? "#5EEAD4" : "#38BDF8";
-      dot.style.boxShadow       = isHovered
+      dotEl.style.width           = isHovered ? "7px" : "5px";
+      dotEl.style.height          = isHovered ? "7px" : "5px";
+      dotEl.style.backgroundColor = isHovered ? "#5EEAD4" : "#38BDF8";
+      dotEl.style.boxShadow       = isHovered
         ? "0 0 12px 3px #2DD4BF"
         : "0 0 8px 2px #38BDF8";
 
       // Glow size
-      glow.style.width  = isHovered ? "150px" : "80px";
-      glow.style.height = isHovered ? "150px" : "80px";
-      glow.style.background = isHovered
+      glowEl.style.width  = isHovered ? "150px" : "80px";
+      glowEl.style.height = isHovered ? "150px" : "80px";
+      glowEl.style.background = isHovered
         ? "radial-gradient(circle,rgba(45,212,191,0.25) 0%,rgba(56,189,248,0.1) 50%,transparent 70%)"
         : "radial-gradient(circle,rgba(45,212,191,0.14) 0%,transparent 65%)";
     }
@@ -134,8 +139,8 @@ export default function CustomCursor() {
 
       const scaleY = 1 + Math.abs(scrollVelocity) * 0.015;
       const scaleX = 1 - Math.abs(scrollVelocity) * 0.008;
-      ring.style.transform = `translate3d(${ringX}px,${ringY}px,0) scale(${scaleX},${scaleY})`;
-      glow.style.transform = `translate3d(${glowX}px,${glowY}px,0)`;
+      ringEl.style.transform = `translate3d(${ringX}px,${ringY}px,0) scale(${scaleX},${scaleY})`;
+      glowEl.style.transform = `translate3d(${glowX}px,${glowY}px,0)`;
 
       rafId = requestAnimationFrame(animate);
     };
