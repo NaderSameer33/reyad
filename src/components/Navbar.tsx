@@ -116,8 +116,10 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             type="button"
+            aria-label={mobileOpen ? "إغلاق القائمة الرئيسية" : "فتح القائمة الرئيسية"}
+            aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-300 hover:bg-slate-800"
+            className="lg:hidden p-2.5 min-h-[44px] min-w-[44px] rounded-lg text-slate-300 hover:bg-slate-800 flex items-center justify-center"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -131,7 +133,7 @@ export default function Navbar() {
           <Link 
             href="/" 
             onClick={() => setMobileOpen(false)}
-            className="block text-sm font-bold text-slate-200 py-1.5 border-b border-slate-800"
+            className="block text-sm font-bold text-slate-200 py-2.5 min-h-[44px] border-b border-slate-800"
           >
             الرئيسية
           </Link>
@@ -143,7 +145,7 @@ export default function Navbar() {
                 key={s.href}
                 href={s.href}
                 onClick={() => setMobileOpen(false)}
-                className="block text-xs font-medium text-slate-300 py-1 pr-2 hover:text-teal-300"
+                className="block text-xs font-medium text-slate-300 py-2.5 min-h-[44px] pr-2 hover:text-teal-300 flex items-center"
               >
                 • {s.label}
               </Link>
@@ -154,7 +156,7 @@ export default function Navbar() {
             <Link 
               href="/#videos" 
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 text-xs font-black text-teal-300 py-1"
+              className="flex items-center gap-2 text-xs font-black text-teal-300 py-2.5 min-h-[44px]"
             >
               <span className="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
               <span>فيديوهات التنفيذ الميدانية</span>
@@ -162,7 +164,7 @@ export default function Navbar() {
             <Link 
               href="/projects" 
               onClick={() => setMobileOpen(false)}
-              className="block text-xs font-bold text-slate-200"
+              className="block text-xs font-bold text-slate-200 py-2 min-h-[44px] flex items-center"
             >
               سابقة الأعمال (78+ مشروع)
             </Link>

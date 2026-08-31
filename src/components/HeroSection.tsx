@@ -21,10 +21,7 @@ export default function HeroSection() {
           >
             
             {/* Trust Badge with Live Pulse */}
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
+            <div 
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-teal-500/30 text-teal-300 text-xs font-bold shadow-sm"
             >
               <span className="relative flex h-2 w-2">
@@ -33,27 +30,21 @@ export default function HeroSection() {
               </span>
               <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
               <span>شركة معتمدة لكشف التسربات والعزل الشامل بالرياض</span>
-            </motion.div>
+            </div>
 
             {/* Main Headline */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
+            <h1 
               className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-100 font-cairo leading-tight"
             >
               <span className="text-teal-300 font-black">شركة عزل اسطح بالرياض</span> - افضل خدمات العزل المائي والحراري والفوم
-            </motion.h1>
+            </h1>
 
             {/* Description */}
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+            <p 
               className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl font-normal"
             >
               نحمي منزلك وخزانات المياه والأسطح بأحدث أجهزة الفحص الإلكترونية والكاميرات الحرارية مع ضمان رسمي معتمد يصل إلى <strong>15 سنة</strong> ومعتمد لدى شركة المياه والكهرباء.
-            </motion.p>
+            </p>
 
             {/* Value Props Pills */}
             <motion.div 
@@ -149,7 +140,7 @@ export default function HeroSection() {
                       <Droplets className="w-4 h-4" />
                     </div>
                     <div>
-                      <h3 className="text-xs sm:text-sm font-bold text-slate-100 font-cairo">خدمة الطوارئ والمعاينة</h3>
+                      <h2 className="text-xs sm:text-sm font-bold text-slate-100 font-cairo">خدمة الطوارئ والمعاينة</h2>
                       <span className="text-[11px] text-slate-400">فريق فني متاح بجميع أحياء الرياض</span>
                     </div>
                   </div>

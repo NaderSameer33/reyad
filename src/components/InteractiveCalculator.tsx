@@ -77,7 +77,7 @@ export default function InteractiveCalculator() {
             {/* Area Slider */}
             <div>
               <div className="flex justify-between items-center mb-1.5">
-                <label className="text-xs font-bold text-slate-200">
+                <label htmlFor="area-range" className="text-xs font-bold text-slate-200">
                   2. المساحة التقريبية للسطح / الخزان:
                 </label>
                 <span className="text-base font-black text-teal-300 font-cairo">
@@ -85,11 +85,17 @@ export default function InteractiveCalculator() {
                 </span>
               </div>
               <input
+                id="area-range"
                 type="range"
                 min="50"
                 max="1500"
                 step="25"
                 value={area}
+                aria-label="تحديد المساحة التقريبية للسطح"
+                aria-valuemin={50}
+                aria-valuemax={1500}
+                aria-valuenow={area}
+                aria-valuetext={`${area} متر مربع`}
                 onChange={(e) => setArea(Number(e.target.value))}
                 className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-teal-400"
               />

@@ -107,6 +107,7 @@ export default function FloatingDock() {
       <motion.button
         type="button"
         onClick={scrollToTop}
+        aria-label="الصعود لأعلى الصفحة"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
         className="pointer-events-auto w-9 h-9 rounded-xl bg-slate-900/80 backdrop-blur-xl border border-slate-800 hover:border-teal-500/50 text-slate-400 hover:text-teal-300 flex items-center justify-center shadow-xl transition-colors cursor-pointer"

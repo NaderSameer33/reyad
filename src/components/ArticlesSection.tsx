@@ -52,7 +52,7 @@ export default function ArticlesSection() {
 
               <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
                 <div>
-                  <span className="text-[10px] text-slate-500 block mb-1">{art.date}</span>
+                  <span className="text-[10px] text-slate-400 block mb-1">{art.date}</span>
                   <h3 className="font-bold text-slate-100 font-cairo text-sm group-hover:text-teal-300 transition-colors">
                     {art.title}
                   </h3>

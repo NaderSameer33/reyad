@@ -205,8 +205,9 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 mb-1.5">الاسم الكريم *</label>
+                  <label htmlFor="contact-name" className="block text-xs font-bold text-slate-200 mb-1.5">الاسم الكريم *</label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     placeholder="مثال: فهد القحطاني"
@@ -217,8 +218,9 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 mb-1.5">رقم الجوال *</label>
+                  <label htmlFor="contact-phone" className="block text-xs font-bold text-slate-200 mb-1.5">رقم الجوال *</label>
                   <input
+                    id="contact-phone"
                     type="tel"
                     required
                     dir="ltr"
@@ -232,8 +234,10 @@ export default function ContactSection() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 mb-1.5">الحي بالرياض *</label>
+                  <label htmlFor="contact-district" className="block text-xs font-bold text-slate-200 mb-1.5">الحي بالرياض *</label>
                   <select
+                    id="contact-district"
+                    aria-label="اختر الحي"
                     value={formData.district}
                     onChange={(e) => setFormData({ ...formData, district: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-teal-400 text-slate-100 text-xs sm:text-sm outline-none transition-colors cursor-pointer"
@@ -245,8 +249,10 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 mb-1.5">نوع الخدمة المطلوبة</label>
+                  <label htmlFor="contact-service" className="block text-xs font-bold text-slate-200 mb-1.5">نوع الخدمة المطلوبة</label>
                   <select
+                    id="contact-service"
+                    aria-label="اختر نوع الخدمة"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 focus:border-teal-400 text-slate-100 text-xs sm:text-sm outline-none transition-colors cursor-pointer"
@@ -259,8 +265,9 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-200 mb-1.5">المساحة أو وصف المشكلة</label>
+                <label htmlFor="contact-notes" className="block text-xs font-bold text-slate-200 mb-1.5">المساحة أو وصف المشكلة</label>
                 <textarea
+                  id="contact-notes"
                   rows={2}
                   placeholder="هل يوجد تسريب حالي أو ارتفاع في فاتورة المياه؟ المساحة التقريبية؟"
                   value={formData.notes}

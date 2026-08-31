@@ -15,7 +15,7 @@ export default function Footer() {
             </span>
             <span className="text-base font-black text-white font-cairo">شركة المعمورة الحديثة</span>
           </div>
-          <p className="text-xs text-[#94A3B8] leading-relaxed">
+          <p className="text-xs text-slate-300 leading-relaxed">
             الشركة المعتمدة لكشف تسربات المياه بدون تكسير والعزل الشامل للأسطح والخزانات في مدينة الرياض بخبرة تتجاوز 15 عاماً وضمان رسمي موثق.
           </p>
           <div className="flex items-center gap-1.5 text-slate-300 text-[11px]">
@@ -26,21 +26,21 @@ export default function Footer() {
 
         {/* Col 2 */}
         <div className="space-y-2.5">
-          <h4 className="text-white font-bold font-cairo text-sm">أقسام الخدمات</h4>
-          <ul className="space-y-1.5 text-[#94A3B8]">
-            <li><Link href="/services/leak-detection" className="hover:text-[#38BDF8] transition-colors">كشف تسربات المياه بالرياض،</Link></li>
-            <li><Link href="/services/foam" className="hover:text-[#38BDF8] transition-colors">عزل فوم بولي يوريثان معتمد</Link></li>
-            <li><Link href="/services/waterproofing" className="hover:text-[#38BDF8] transition-colors">العزل المائي للأسطح والخزانات</Link></li>
-            <li><Link href="/services/tanks" className="hover:text-[#38BDF8] transition-colors">عزل وتنظيف خزانات المياه</Link></li>
-            <li><Link href="/services/thermal" className="hover:text-[#38BDF8] transition-colors">العزل الحراري وتوفير الطاقة</Link></li>
-            <li><Link href="https://www.maamoura.agency/" className="hover:text-[#38BDF8] transition-colors font-bold text-slate-200">شركة عزل اسطح بالرياض ←</Link></li>
+          <h2 className="text-white font-bold font-cairo text-sm">أقسام الخدمات</h2>
+          <ul className="space-y-0.5 text-slate-300">
+            <li><Link href="/services/leak-detection" className="hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px]">كشف تسربات المياه بالرياض،</Link></li>
+            <li><Link href="/services/foam" className="hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px]">عزل فوم بولي يوريثان معتمد</Link></li>
+            <li><Link href="/services/waterproofing" className="hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px]">العزل المائي للأسطح والخزانات</Link></li>
+            <li><Link href="/services/tanks" className="hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px]">عزل وتنظيف خزانات المياه</Link></li>
+            <li><Link href="/services/thermal" className="hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px]">العزل الحراري وتوفير الطاقة</Link></li>
+            <li><Link href="https://www.maamoura.agency/" className="hover:text-[#38BDF8] transition-colors font-bold text-slate-200 py-2 inline-block min-h-[44px]">شركة عزل اسطح بالرياض ←</Link></li>
           </ul>
         </div>
 
         {/* Col 3 */}
         <div className="space-y-2.5">
-          <h4 className="text-white font-bold font-cairo text-sm">أحياء التغطية بالرياض</h4>
-          <p className="text-[11px] text-[#94A3B8]">
+          <h2 className="text-white font-bold font-cairo text-sm">أحياء التغطية بالرياض</h2>
+          <p className="text-[11px] text-slate-300">
             نصلك أينما كنت في كافة أحياء ومحافظات الرياض:
           </p>
           <div className="flex flex-wrap gap-1 text-[10px]">
@@ -54,7 +54,7 @@ export default function Footer() {
 
         {/* Col 4 */}
         <div className="space-y-3">
-          <h4 className="text-white font-bold font-cairo text-sm">الاتصال والتواصل</h4>
+          <h2 className="text-white font-bold font-cairo text-sm">الاتصال والتواصل</h2>
           <div className="space-y-2 text-slate-300 text-xs">
             <a href="tel:0501884483" className="flex items-center gap-2 hover:text-sky-300 transition-colors">
               <Phone className="w-4 h-4 text-[#38BDF8] shrink-0" />
@@ -123,14 +123,14 @@ export default function Footer() {
 
       </div>
 
-      <div className="max-w-6xl mx-auto pt-6 border-t border-[#334155] flex flex-col sm:flex-row items-center justify-between gap-3 text-[#64748B] text-[11px]">
+      <div className="max-w-6xl mx-auto pt-6 border-t border-[#334155] flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-400 text-[11px]">
         <p>© {new Date().getFullYear()} شركة المعمورة الحديثة لحلول العزل وكشف التسربات. جميع الحقوق محفوظة.</p>
         <div className="flex flex-wrap items-center gap-3 text-center">
-          <Link href="https://www.maamoura.agency/" className="text-[#64748B] hover:text-[#38BDF8] transition-colors">
+          <Link href="https://www.maamoura.agency/" className="text-slate-400 hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px] flex items-center">
             شركة عزل بالرياض
           </Link>
           <span>|</span>
-          <Link href="https://www.maamoura.agency/" className="text-[#64748B] hover:text-[#38BDF8] transition-colors">
+          <Link href="https://www.maamoura.agency/" className="text-slate-400 hover:text-[#38BDF8] transition-colors py-2 inline-block min-h-[44px] flex items-center">
             عزل في الرياض
           </Link>
           <span>|</span>

@@ -7,14 +7,14 @@ import "./globals.css";
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
-  weight: ["300", "400", "500", "700", "800", "900"],
+  weight: ["400", "700", "800"],
   variable: "--font-tajawal",
   display: "swap",
 });
 
 const cairo = Cairo({
   subsets: ["arabic"],
-  weight: ["300", "400", "600", "700", "900"],
+  weight: ["400", "700", "900"],
   variable: "--font-cairo",
   display: "swap",
 });
